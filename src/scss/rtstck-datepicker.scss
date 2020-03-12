@@ -1,0 +1,43 @@
+$gray-400: #ced4da !default;
+$primary: #007bff !default;
+
+.rtstck-datepicker {
+  .-not-day-of-month {
+    > div {
+      opacity: .20;
+      background-color: $gray-400;
+      color: black;
+    }
+  }
+  .-is-selected {
+    > div {
+      background-color: $primary;
+      color: white;
+    }
+  }
+  .-is-today {
+    position: relative;
+    .day:before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 8px 0 0;
+      border-color: $primary transparent transparent transparent;
+    }
+    &.-is-selected .day:before {
+      border-color: white transparent transparent transparent;
+    }
+  }
+}
+.rtstck-daterange {
+  .legend {
+    &-square{
+      width: 20px;
+      height: 20px;
+      background-color: rgba($primary, .3);
+    }
+  }
+}
